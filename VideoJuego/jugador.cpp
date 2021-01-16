@@ -18,6 +18,11 @@ int Jugador::getVidas()
     return vidas;
 }
 
+QVector<Barco *> Jugador::getBarcos()
+{
+    return barcos;
+}
+
 void Jugador::impacto()
 {
     vidas--;

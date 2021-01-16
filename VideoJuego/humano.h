@@ -9,7 +9,7 @@ private:
     int nJugador;
 public:
     Humano(QString nombre, int vidas,int nBarcos, int nJugador);;
-    void disparar(int barco, float angulo);
+    void disparar(int barco, float angulo, Jugador enemigo);
 
 };
 

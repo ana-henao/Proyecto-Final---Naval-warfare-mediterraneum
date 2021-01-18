@@ -1,20 +1,22 @@
 #ifndef JUGADOR_H
 #define JUGADOR_H
 #include <QString>
-#include <barco.h>
+#include "barcograf.h"
 #include<QVector>
+
 
 class Jugador
 {
 private:
     QString nombre;
     int vidas;
-    QVector<Barco *> barcos={};
+    QVector<Barcograf *> barcos={};
+    int nBarcos;
 public:
     Jugador(QString nombre, int vidas,int nBarcos);
     QString getNombre();
     int getVidas();
-    QVector<Barco*> getBarcos();
+    QVector<Barcograf *> getBarcos();
     void impacto();
 };
 

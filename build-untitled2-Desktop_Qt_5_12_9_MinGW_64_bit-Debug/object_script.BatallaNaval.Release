@@ -1,0 +1,11 @@
+release/bala.o
+release/balagraf.o
+release/barco.o
+release/barcograf.o
+release/humano.o
+release/jugador.o
+release/main.o
+release/mainwindow.o
+release/maquina.o
+release/qrc_pictures.o
+release/moc_mainwindow.o

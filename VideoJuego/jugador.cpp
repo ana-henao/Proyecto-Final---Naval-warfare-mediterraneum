@@ -5,6 +5,7 @@ Jugador::Jugador(QString nombre, int vidas, int nBarcos)
 {
     this->nombre=nombre;
     this->vidas=vidas;
+    this->nBarcos=nBarcos;
 
 }
 
@@ -18,7 +19,7 @@ int Jugador::getVidas()
     return vidas;
 }
 
-QVector<Barco *> Jugador::getBarcos()
+QVector<Barcograf *> Jugador::getBarcos()
 {
     return barcos;
 }

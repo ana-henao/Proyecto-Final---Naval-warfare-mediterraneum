@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     bala.cpp \
+    balagraf.cpp \
     barco.cpp \
     barcograf.cpp \
     humano.cpp \
@@ -20,6 +21,7 @@ SOURCES += \
 
 HEADERS += \
     bala.h \
+    balagraf.h \
     barco.h \
     barcograf.h \
     humano.h \

@@ -17,7 +17,8 @@ SOURCES += \
     jugador.cpp \
     main.cpp \
     mainwindow.cpp \
-    maquina.cpp
+    maquina.cpp \
+    muro.cpp
 
 HEADERS += \
     bala.h \
@@ -27,7 +28,8 @@ HEADERS += \
     humano.h \
     jugador.h \
     mainwindow.h \
-    maquina.h
+    maquina.h \
+    muro.h
 
 FORMS += \
     mainwindow.ui

@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/new/prefix1"/>
+    <qresource prefix="/">
+        <file>pictures/Balsa.png</file>
+        <file>pictures/Barco-H.png</file>
+        <file>pictures/Barco-pequeño.png</file>
+        <file>pictures/Barco-Vela.png</file>
+        <file>pictures/Cayak.png</file>
+        <file>pictures/abajo.png</file>
+        <file>pictures/arriba.png</file>
+        <file>pictures/bala.png</file>
+        <file>pictures/bala-vida.png</file>
+        <file>pictures/der.png</file>
+        <file>pictures/izq.png</file>
+        <file>pictures/fondo azul mar blue wallpaper (46)-829110_800.jpeg</file>
+    </qresource>
+</RCC>

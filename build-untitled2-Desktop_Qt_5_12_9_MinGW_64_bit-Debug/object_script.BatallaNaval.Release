@@ -7,5 +7,6 @@ release/jugador.o
 release/main.o
 release/mainwindow.o
 release/maquina.o
+release/muro.o
 release/qrc_pictures.o
 release/moc_mainwindow.o

@@ -7,5 +7,6 @@ debug/jugador.o
 debug/main.o
 debug/mainwindow.o
 debug/maquina.o
+debug/muro.o
 debug/qrc_pictures.o
 debug/moc_mainwindow.o

@@ -1,12 +1,13 @@
 release/bala.o
+release/balacirc.o
 release/balagraf.o
+release/balamrua.o
+release/balaparab.o
 release/barco.o
 release/barcograf.o
-release/humano.o
 release/jugador.o
 release/main.o
 release/mainwindow.o
-release/maquina.o
 release/muro.o
 release/qrc_pictures.o
 release/moc_mainwindow.o

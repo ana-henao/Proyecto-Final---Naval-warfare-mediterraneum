@@ -1,12 +1,13 @@
 debug/bala.o
+debug/balacirc.o
 debug/balagraf.o
+debug/balamrua.o
+debug/balaparab.o
 debug/barco.o
 debug/barcograf.o
-debug/humano.o
 debug/jugador.o
 debug/main.o
 debug/mainwindow.o
-debug/maquina.o
 debug/muro.o
 debug/qrc_pictures.o
 debug/moc_mainwindow.o

@@ -6,28 +6,27 @@ const double G=9.8;
 
 
 
+
 using namespace std;
 
 class Bala
 {
-private:
+protected:
     float Radio;
     float x;
     float y;
     float Vx;
     float Vy;
-    float vo;
-    float angulo;
 
 
 public:
-    Bala(float R, float vo, float angulo);
-    void movimiento(bool enemigo);
+    Bala(float R, float vx, float vy, int x, int y);
     float getX();
     float getY();
     float getVx();
     float getVy();
     float getR();
+    virtual void movimiento(float t);
 };
 
 #endif // BALA_H

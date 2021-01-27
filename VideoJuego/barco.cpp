@@ -45,10 +45,21 @@ float Barco::getAngulo()
     return angulo;
 }
 
-Balagraf* Barco::dispara()
+Balagraf *Barco::dispara(float R,float vx, float vy,float dato,int tipo)
 {
-    bala=new Balagraf(1,vo, angulo);
+
+    bala=new Balagraf(R,vx,vy,this->x+30,this->y,dato,tipo);
     return bala;
+}
+
+void Barco::setX(int x)
+{
+    this->x=x;
+}
+
+void Barco::setY(int y)
+{
+    this->y=y;
 }
 
 

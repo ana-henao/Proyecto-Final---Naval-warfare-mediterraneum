@@ -10,25 +10,27 @@ CONFIG += c++11
 
 SOURCES += \
     bala.cpp \
+    balacirc.cpp \
     balagraf.cpp \
+    balamrua.cpp \
+    balaparab.cpp \
     barco.cpp \
     barcograf.cpp \
-    humano.cpp \
     jugador.cpp \
     main.cpp \
     mainwindow.cpp \
-    maquina.cpp \
     muro.cpp
 
 HEADERS += \
     bala.h \
+    balacirc.h \
     balagraf.h \
+    balamrua.h \
+    balaparab.h \
     barco.h \
     barcograf.h \
-    humano.h \
     jugador.h \
     mainwindow.h \
-    maquina.h \
     muro.h
 
 FORMS += \

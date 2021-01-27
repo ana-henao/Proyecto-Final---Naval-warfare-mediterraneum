@@ -3,6 +3,7 @@
 #include "balagraf.h"
 
 
+
 class Barco
 {
 private:
@@ -26,7 +27,11 @@ public:
     int getY();
     float getVo();
     float getAngulo();
-    Balagraf* dispara();
+    Balagraf* dispara(float R, float vx, float vy,float dato,int tipo);
+
+    void setX(int x);
+    void setY(int y);
+
 
 };
 

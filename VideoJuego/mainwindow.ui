@@ -160,7 +160,7 @@ color: rgb(255, 255, 255);</string>
          <number>8</number>
         </property>
         <item row="3" column="0">
-         <widget class="QPushButton" name="pushButton_4">
+         <widget class="QPushButton" name="izq1">
           <property name="minimumSize">
            <size>
             <width>40</width>
@@ -277,7 +277,7 @@ color: rgb(255, 255, 255);</string>
          </spacer>
         </item>
         <item row="3" column="2">
-         <widget class="QPushButton" name="pushButton_5">
+         <widget class="QPushButton" name="der1">
           <property name="minimumSize">
            <size>
             <width>40</width>
@@ -310,7 +310,7 @@ color: rgb(255, 255, 255);</string>
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QPushButton" name="pushButton_2">
+         <widget class="QPushButton" name="up1">
           <property name="minimumSize">
            <size>
             <width>40</width>
@@ -395,7 +395,7 @@ color: rgb(255, 255, 255);</string>
          </spacer>
         </item>
         <item row="4" column="1">
-         <widget class="QPushButton" name="pushButton_6">
+         <widget class="QPushButton" name="down1">
           <property name="minimumSize">
            <size>
             <width>40</width>
@@ -440,7 +440,21 @@ color: rgb(255, 255, 255);</string>
          <number>5</number>
         </property>
         <item>
-         <widget class="QPushButton" name="pushButton_10">
+         <widget class="QComboBox" name="tipo1">
+          <item>
+           <property name="text">
+            <string>Parabólico</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>MRUA</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="Disparar1">
           <property name="minimumSize">
            <size>
             <width>0</width>
@@ -502,7 +516,21 @@ color: rgb(255, 255, 255);</string>
          <number>5</number>
         </property>
         <item>
-         <widget class="QPushButton" name="pushButton_11">
+         <widget class="QComboBox" name="tipo2">
+          <item>
+           <property name="text">
+            <string>Parabólico</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>MRUA</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="Disparar2">
           <property name="minimumSize">
            <size>
             <width>0</width>
@@ -573,7 +601,7 @@ color: rgb(255, 255, 255);</string>
          </spacer>
         </item>
         <item row="3" column="2">
-         <widget class="QPushButton" name="pushButton_8">
+         <widget class="QPushButton" name="der2">
           <property name="minimumSize">
            <size>
             <width>40</width>
@@ -638,7 +666,7 @@ color: rgb(255, 255, 255);</string>
          </spacer>
         </item>
         <item row="3" column="0">
-         <widget class="QPushButton" name="pushButton_7">
+         <widget class="QPushButton" name="izq2">
           <property name="minimumSize">
            <size>
             <width>40</width>
@@ -671,7 +699,7 @@ color: rgb(255, 255, 255);</string>
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QPushButton" name="pushButton_3">
+         <widget class="QPushButton" name="up2">
           <property name="minimumSize">
            <size>
             <width>40</width>
@@ -698,7 +726,7 @@ color: rgb(255, 255, 255);</string>
          </widget>
         </item>
         <item row="4" column="1">
-         <widget class="QPushButton" name="pushButton_9">
+         <widget class="QPushButton" name="down2">
           <property name="minimumSize">
            <size>
             <width>40</width>
@@ -721,43 +749,6 @@ color: rgb(255, 255, 255);</string>
             <height>40</height>
            </size>
           </property>
-         </widget>
-        </item>
-        <item row="1" column="1" colspan="2">
-         <widget class="QComboBox" name="comboBox_2">
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);</string>
-          </property>
-          <item>
-           <property name="text">
-            <string>Seleccione Barco</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Balsa</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Vela</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Kayak</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Barco pequeño</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Barco Largo</string>
-           </property>
-          </item>
          </widget>
         </item>
         <item row="1" column="0">
@@ -795,6 +786,44 @@ color: rgb(255, 255, 255);</string>
            </widget>
           </item>
          </layout>
+        </item>
+        <item row="1" column="1" colspan="2">
+         <widget class="QComboBox" name="comboBox_2">
+          <property name="styleSheet">
+           <string notr="true">
+background-color: rgb(255, 255, 255);</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Seleccione Barco</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Balsa</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Vela</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Kayak</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Barco Pequeño</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Barco Largo</string>
+           </property>
+          </item>
+         </widget>
         </item>
        </layout>
       </item>

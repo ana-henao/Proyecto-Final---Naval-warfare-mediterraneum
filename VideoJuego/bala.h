@@ -27,6 +27,8 @@ public:
     float getVy();
     float getR();
     virtual void movimiento(float t);
+    void setX(float x);
+    void setY(float y);
 };
 
 #endif // BALA_H

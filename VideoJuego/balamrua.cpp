@@ -8,7 +8,10 @@ BalaMRUA::BalaMRUA(float R, float vx, float vy, int x, int y, float a): Bala(R,v
 
 void BalaMRUA::movimiento(float t)
 {
-
+    this->t+=0.0001;
+    Vx=this->a*this->t;
+    this->x=x+Vx*this->t;
+    this->y=y;
 }
 
 
@@ -20,4 +23,9 @@ void BalaMRUA::setAceleracion(float a)
 float BalaMRUA::getAceleracion()
 {
     return a;
+}
+
+void BalaMRUA::setVo(float vo)
+{
+    this->vo=vo;
 }

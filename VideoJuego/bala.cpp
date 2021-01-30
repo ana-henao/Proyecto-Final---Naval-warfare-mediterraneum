@@ -1,5 +1,7 @@
 #include "bala.h"
+#include "iostream"
 
+using namespace std;
 
 Bala::Bala(float R, float vx, float vy, int x, int y)
 {
@@ -8,6 +10,8 @@ Bala::Bala(float R, float vx, float vy, int x, int y)
     this->Vy=vy;
     this->x=x;
     this->y=y;
+    cout <<"x "<<x<<endl;
+    cout <<"y "<<y<<endl;
 
 }
 
@@ -40,4 +44,14 @@ float Bala::getR()
 void Bala::movimiento(float t)
 {
 
+}
+
+void Bala::setX(float x)
+{
+    this->x=x;
+}
+
+void Bala::setY(float y)
+{
+    this->y=y;
 }

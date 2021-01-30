@@ -5,9 +5,11 @@ release/balamrua.o
 release/balaparab.o
 release/barco.o
 release/barcograf.o
+release/disparo.o
 release/jugador.o
 release/main.o
 release/mainwindow.o
 release/muro.o
+release/partida.o
 release/qrc_pictures.o
 release/moc_mainwindow.o

@@ -5,9 +5,11 @@ debug/balamrua.o
 debug/balaparab.o
 debug/barco.o
 debug/barcograf.o
+debug/disparo.o
 debug/jugador.o
 debug/main.o
 debug/mainwindow.o
 debug/muro.o
+debug/partida.o
 debug/qrc_pictures.o
 debug/moc_mainwindow.o

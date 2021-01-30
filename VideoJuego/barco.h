@@ -16,10 +16,11 @@ private:
     float v0x;
     float v0y;
     Balagraf *bala;
+    int puntaje;
 
 
 public:
-    Barco(int Al, int An, int x, int y, float vo);
+    Barco(int Al, int An, int x, int y, float vo, int puntaje);
     void setAngulo(float a);
     int getAlto();
     int getAncho();
@@ -31,6 +32,7 @@ public:
 
     void setX(int x);
     void setY(int y);
+    int getPuntaje();
 
 
 };

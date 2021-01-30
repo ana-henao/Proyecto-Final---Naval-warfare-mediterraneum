@@ -16,10 +16,12 @@ SOURCES += \
     balaparab.cpp \
     barco.cpp \
     barcograf.cpp \
+    disparo.cpp \
     jugador.cpp \
     main.cpp \
     mainwindow.cpp \
-    muro.cpp
+    muro.cpp \
+    partida.cpp
 
 HEADERS += \
     bala.h \
@@ -29,9 +31,11 @@ HEADERS += \
     balaparab.h \
     barco.h \
     barcograf.h \
+    disparo.h \
     jugador.h \
     mainwindow.h \
-    muro.h
+    muro.h \
+    partida.h
 
 FORMS += \
     mainwindow.ui

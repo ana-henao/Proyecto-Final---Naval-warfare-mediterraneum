@@ -14,8 +14,9 @@ private:
     Bala * bala;
     QPixmap *pixmap;
     float escala;
-    float xo;
-    float yo;
+    float x;
+    float y;
+    int tipo;
 
 public:
     Balagraf(float R,  float vx, float vy, int x, int y,float dato,int tipo);
@@ -24,6 +25,10 @@ public:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,QWidget *widget);
     void setEscala(float s);
     void actualizar(float x,float y);
+    float getX();
+    float getY();
+    int getTipo();
+
 };
 
 #endif // BALAGRAF_H

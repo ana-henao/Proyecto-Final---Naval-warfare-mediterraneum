@@ -1,13 +1,16 @@
 #include "barco.h"
+#include "iostream"
 
+using namespace std;
 
-Barco::Barco(int Al, int An, int x, int y, float vo)
+Barco::Barco(int Al, int An, int x, int y, float vo, int p)
 {
     this->alto=Al;
     this->ancho=An;
     this->x=x;
     this->y=y;
     this->vo=vo;
+    this->puntaje=p;
 }
 
 void Barco::setAngulo(float a)
@@ -47,8 +50,8 @@ float Barco::getAngulo()
 
 Balagraf *Barco::dispara(float R,float vx, float vy,float dato,int tipo)
 {
-
-    bala=new Balagraf(R,vx,vy,this->x+30,this->y,dato,tipo);
+    //cout <<"nuevo"<< endl;
+    bala=new Balagraf(R,vx,vy,this->x,this->y,dato,tipo);
     return bala;
 }
 
@@ -60,6 +63,11 @@ void Barco::setX(int x)
 void Barco::setY(int y)
 {
     this->y=y;
+}
+
+int Barco::getPuntaje()
+{
+    return puntaje;
 }
 
 

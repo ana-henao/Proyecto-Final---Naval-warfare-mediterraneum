@@ -9,17 +9,24 @@ class Jugador
 {
 private:
     QString nombre;
-    int vidas;
+    int disparos;
+    int puntaje=0;
     QVector<Barcograf *> barcos={};
     int nBarcos;
     int nJugador;
+    QStringList nombres_barcos;
+
 public:
-    Jugador(QString nombre, int vidas,int nBarcos, int nJugador);
+    Jugador(QString nombre, int disparos,int nBarcos, int nJugador);
     QString getNombre();
-    int getVidas();
+    int getDisparos();
+    int getPuntaje();
+    void Quitar_disparo();
+    void setPuntaje(int puntaje);
     QVector<Barcograf *> getBarcos();
-    void impacto();
     void disparar(int barco, float angulo, Jugador enemigo);
+    void Reset();
+    QStringList getNombresBarcos();
 };
 
 #endif // JUGADOR_H

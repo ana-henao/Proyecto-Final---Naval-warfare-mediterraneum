@@ -11,23 +11,11 @@ BalaParab::BalaParab(float R, float vx, float vy, int x, int y, float angulo): B
 
 void BalaParab::movimiento(float t)
 {
-    this->t+=0.0001;
+    this->t+=0.001*t;
     Vx = vo*cos((angulo)*pi/180);
-    //cout << "vx:"<<Vx<<endl;
-
     Vy = vo*sin((angulo)*pi/180);
-    //cout << "vy:"<<Vy<<endl;
-
-    //x = 0.0;
-    //y = 0.0;
     x = x + Vx*this->t;
     y = y + Vy*this->t -(0.5*G*this->t*this->t);
-    //cout<<"x:"<<x<<endl;
-    //cout<<"y:"<<y<<endl;
-    //cout<<"t:"<<this->t<<endl;
-
-
-
 }
 
 

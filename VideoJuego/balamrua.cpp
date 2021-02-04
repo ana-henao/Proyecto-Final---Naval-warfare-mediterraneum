@@ -8,7 +8,7 @@ BalaMRUA::BalaMRUA(float R, float vx, float vy, int x, int y, float a): Bala(R,v
 
 void BalaMRUA::movimiento(float t)
 {
-    this->t+=0.0001;
+    this->t+=0.0001;//delta de tiempo, en donde va cambindo el tiempo en las ecuaciones
     Vx=this->a*this->t;
     this->x=x+Vx*this->t;
     this->y=y;

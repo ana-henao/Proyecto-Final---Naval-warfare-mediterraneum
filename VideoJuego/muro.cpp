@@ -1,5 +1,6 @@
 #include "muro.h"
 
+//clase para el muro central que divide la pantalla
 
 muro::muro(int w_, int h_, int x, int y)
 {

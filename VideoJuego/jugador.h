@@ -11,10 +11,10 @@ private:
     QString nombre;
     int disparos;
     int puntaje=0;
-    QVector<Barcograf *> barcos={};
+    QVector<Barcograf *> barcos={};//vector que almacena la cantidad de barcos
     int nBarcos;
     int nJugador;
-    QStringList nombres_barcos;
+    QStringList nombres_barcos;//alamcena la cantidad de barcos
 
 public:
     Jugador(QString nombre, int disparos,int nBarcos, int nJugador);
@@ -23,10 +23,10 @@ public:
     int getPuntaje();
     void Quitar_disparo();
     void setPuntaje(int puntaje);
-    QVector<Barcograf *> getBarcos();
+    QVector<Barcograf *> getBarcos();//vector que obtiene los nombres de los barcos
     void disparar(int barco, float angulo, Jugador enemigo);
     void Reset();
-    QStringList getNombresBarcos();
+    QStringList getNombresBarcos();//almacena los nombres de los barcos
 };
 
 #endif // JUGADOR_H

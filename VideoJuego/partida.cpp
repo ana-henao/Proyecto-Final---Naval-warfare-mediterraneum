@@ -1,9 +1,9 @@
 #include "partida.h"
 
+//implementa la partida
 
 
-
-Partida::Partida(QString nombre, Jugador *jugador1, Jugador *jugador2, int nivel)
+Partida::Partida(QString nombre, Jugador *jugador1, Jugador *jugador2, int nivel)//constructor con los argumentos necesarios para inciar una partida
 {
     this->jugador1=jugador1;
     this->jugador2=jugador2;
@@ -11,7 +11,7 @@ Partida::Partida(QString nombre, Jugador *jugador1, Jugador *jugador2, int nivel
     this->nombre=nombre;
 }
 
-Jugador *Partida::getJugador1()
+Jugador *Partida::getJugador1()//obtiene el jugador uno, creado desde la clase jugador
 {
     return jugador1;
 }

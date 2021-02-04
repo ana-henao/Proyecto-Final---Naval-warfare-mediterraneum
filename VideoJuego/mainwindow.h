@@ -11,6 +11,7 @@
 //#include "balagraf.h"
 #include <QVector>
 #include "partida.h"
+#include <QMessageBox>
 
 
 QT_BEGIN_NAMESPACE
@@ -93,6 +94,7 @@ private:
     Partida *partida_actual;
     int elim=0;
     int carg=0;
+    QMessageBox msg;
 
 
 

@@ -9,7 +9,7 @@ BalaParab::BalaParab(float R, float vx, float vy, int x, int y, float angulo): B
     this->angulo=angulo;
 }
 
-void BalaParab::movimiento(float t)
+void BalaParab::movimiento(float t)//ecuaciones de movimiento parabólco
 {
     this->t+=0.001*t;
     Vx = vo*cos((angulo)*pi/180);
@@ -19,7 +19,7 @@ void BalaParab::movimiento(float t)
 }
 
 
-
+//en POO se tien eun set y un get por cada objeto, no necesariamente se usa, pero es como una regla
 void BalaParab::setAngulo(float an)
 {
     this->angulo=an;

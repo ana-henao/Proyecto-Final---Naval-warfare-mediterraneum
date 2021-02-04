@@ -15,12 +15,12 @@ protected:
     float Radio;
     float x;
     float y;
-    float Vx;
-    float Vy;
+    float Vx=0;
+    float Vy=0;
 
 
 public:
-    Bala(float R, float vx, float vy, int x, int y);
+    Bala(float R, float vx, float vy, int x, int y); //costructor con argumentos (valores de
     float getX();
     float getY();
     float getVx();

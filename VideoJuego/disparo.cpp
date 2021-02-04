@@ -1,8 +1,8 @@
 #include "disparo.h"
 
+//clase disparo que grafica el contador de disparos
 
-
-Disparo::Disparo(int w_, int h_, int x, int y)
+Disparo::Disparo(int w_, int h_, int x, int y)//constructor del disparo, asigna valores de ancho, altol el grafico y la posicion para que aparezca en escena
 {
     this->w = w_;
     this->h = h_;

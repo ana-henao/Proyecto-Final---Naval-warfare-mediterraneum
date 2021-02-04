@@ -16,16 +16,19 @@ Balagraf::Balagraf(float R,  float vx, float vy, int x, int y,float dato,int tip
 
     if(tipo==1){
 
-        float vo=pow(pow(vx,2)+pow(vy,2),1/2);
+        float vo=pow(pow(vx,2)+pow(vy,2),1/2);//obtenemos el vector velocidad, sumando las componentes para ponerlas en la ecuacion
         BalaParab *bala_=new BalaParab(R, vo, 0, 0, 0, dato);
         bala_->setVo(vx);
         bala=bala_;
-        setPos(x+30,y);
+        setPos(x+30,y);//x+30, para que quede 30 pixeles mas corrido en la parte grafica
     }
     else if(tipo==2){
-
-        bala=new BalaCirc(R, vx, vy, 0, 0, dato);
-        setPos(x+R/10,y+R/10);
+        BalaCirc *bala_=new BalaCirc(R, vx, vy, 4000, 5000, dato);
+        bala_->setXcentral(0);
+        bala_->setYcentral(0);
+        bala_->setMasa(dato);
+        bala=bala_;
+        setPos(4000*0.05,5000*0.05);
     }else{
 
         float vo=pow(pow(vx,2)+pow(vy,2),1/2);

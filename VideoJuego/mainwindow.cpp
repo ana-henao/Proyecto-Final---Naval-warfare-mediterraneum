@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <cmath>
 
+
 #include <iostream>
 
 using namespace std;
@@ -17,8 +18,9 @@ MainWindow::MainWindow(QWidget *parent)
     this->jugador1=new Jugador("Jugador 1",5,5,1);
     this->jugador2=new Jugador("Jugador 2",5,5,2);
 
-    partida_actual=new Partida("default", this->jugador1,this->jugador2,1);
+    partida_actual=new Partida("default", this->jugador1,this->jugador2,1);//se crea una neuva partida
     setNivel(nivel, partida_actual);
+   //desactiva los botones de la partida cuando se esté jugando
     ui->nuevaP->setEnabled(false);
     ui->eliminarP->setEnabled(false);
     ui->cargarP->setEnabled(false);
@@ -43,16 +45,17 @@ void MainWindow::setjugador1(Jugador *jugador1)
 {
 
     disparos1.clear();
+
     barc1=NULL;
-    for (int i=0;i<jugador1->getBarcos().size() ;i++) {
-        scene->addItem(jugador1->getBarcos()[i]);
+    for (int i=0;i<jugador1->getBarcos().size() ;i++) {//recorre desde i=0, hasta
+        scene->addItem(jugador1->getBarcos()[i]);//ciclo que añade los barcos a la escena
     }
-    for (int i=0;i<jugador1->getDisparos() ;i++ ) {
-        Disparo *dis=new Disparo(15,43,-90+(i*20),0);
+    for (int i=0;i<jugador1->getDisparos() ;i++ ) {//la variable jugador1 apunta a getDisparos en la clase jugador, que obtiene los disparos que va teniendo cada jugador
+        Disparo *dis=new Disparo(15,43,-90+(i*20),0);//de la clase disparo, crea un disparo(contador de balas), y le asigna los parámetros para posicionarla en la escena
         disparos1.append(dis);
         scene1->addItem(dis);
     }
-   ui->comboBox->addItems(jugador1->getNombresBarcos());
+   ui->comboBox->addItems(jugador1->getNombresBarcos());//desplega la lista de los barcos del primer jugador
 
    }
 
@@ -60,9 +63,9 @@ void MainWindow::setjugador2(Jugador *jugador2)
 {
     disparos2.clear();
     barc2=NULL;
-    for (int i=0;i<jugador2->getBarcos().size() ;i++) {
+    for (int i=0;i<jugador2->getBarcos().size() ;i++) {// get barcos, es de tipo barco graf, que a su vez, es de tipo barco
         int x=jugador2->getBarcos()[i]->getBarco()->getX();
-        jugador2->getBarcos()[i]->setX((-1*x));
+        jugador2->getBarcos()[i]->setX((-1*x));//se debe invertir la posicion de x, por que queda al lado contrario de la pantalla
         scene->addItem(jugador2->getBarcos()[i]);
     }
     for (int i=0;i<jugador2->getDisparos() ;i++ ) {
@@ -75,7 +78,7 @@ void MainWindow::setjugador2(Jugador *jugador2)
 
 void MainWindow::setNivel(int nivel, Partida *partida)
 {
-    scene=new QGraphicsScene;
+    scene=new QGraphicsScene;//crea las diferentes escenas para los nivles
     scene1=new QGraphicsScene;
     scene2=new QGraphicsScene;
     ui->graphicsView_2->setScene(scene);
@@ -94,6 +97,10 @@ void MainWindow::setNivel(int nivel, Partida *partida)
     ui->Disparar1->setEnabled(false);
     ui->Disparar2->setEnabled(false);
 
+
+    barc1=NULL;
+    barc2=NULL;
+
     if(nivel==1){
         ui->nivel->setText("Nivel 1");
         this->jugador1=new Jugador("Jugador 1",5,5,1);
@@ -108,52 +115,96 @@ void MainWindow::setNivel(int nivel, Partida *partida)
         this->partida_actual->setDisparos1(this->disparos1);
         this->partida_actual->setDisparos2(this->disparos2);
         this->partida_actual->setNivel(1);
+
     }else if(nivel==2){
+        ui->up1->setEnabled(false);
+        ui->der1->setEnabled(false);
+        ui->izq1->setEnabled(false);
+        ui->down1->setEnabled(false);
+        ui->up2->setEnabled(false);
+        ui->der2->setEnabled(false);
+        ui->izq2->setEnabled(false);
+        ui->down2->setEnabled(false);
+        ui->Disparar1->setEnabled(true);
+        ui->Disparar2->setEnabled(true);
+
+        iniciar=true;
+
         ui->nivel->setText("Nivel 2");
         this->jugador1=new Jugador("Jugador 1",4,4,1);
         this->jugador2=new Jugador("Jugador 2",4,4,2);
-        this->partida_actual->set_jugador1(this->jugador1);
-        this->partida_actual->set_jugador2(this->jugador2);
 
-        int j1=this->jugador1->getPuntaje();
-        ui->puntaje1->setText(QString::number(j1));
-        ui->puntaje2->setText(QString::number(this->jugador2->getPuntaje()));
+        int p1=ui->puntaje1->text().toInt();
+        this->jugador1->setPuntaje(p1);
+        int p2=ui->puntaje2->text().toInt();
+        this->jugador2->setPuntaje(p2);
 
         setjugador1(this->jugador1);
         setjugador2(this->jugador2);
+
+        this->partida_actual->set_jugador1(this->jugador1);
+        this->partida_actual->set_jugador2(this->jugador2);
+
         this->partida_actual->setDisparos1(this->disparos1);
         this->partida_actual->setDisparos2(this->disparos2);
         this->partida_actual->setNivel(2);
 
-    }else{
+    }else if(nivel==3){
+        ui->up1->setEnabled(false);
+        ui->der1->setEnabled(false);
+        ui->izq1->setEnabled(false);
+        ui->down1->setEnabled(false);
+        ui->up2->setEnabled(false);
+        ui->der2->setEnabled(false);
+        ui->izq2->setEnabled(false);
+        ui->down2->setEnabled(false);
+        ui->Disparar1->setEnabled(true);
+        ui->Disparar2->setEnabled(true);
+
+        iniciar=true;
 
         ui->nivel->setText("Nivel 3");
         this->jugador1=new Jugador("Jugador 1",3,3,1);
         this->jugador2=new Jugador("Jugador 2",3,3,2);
-        this->partida_actual->set_jugador1(this->jugador1);
-        this->partida_actual->set_jugador2(this->jugador2);
 
-        int j1=this->jugador1->getPuntaje();
-        ui->puntaje1->setText(QString::number(j1));
-        ui->puntaje2->setText(QString::number(this->jugador2->getPuntaje()));
+        int p1=ui->puntaje1->text().toInt();
+        this->jugador1->setPuntaje(p1);
+        int p2=ui->puntaje2->text().toInt();
+        this->jugador2->setPuntaje(p2);
+
+
 
         setjugador1(this->jugador1);
         setjugador2(this->jugador2);
+
+        this->partida_actual->set_jugador1(this->jugador1);
+        this->partida_actual->set_jugador2(this->jugador2);
+
         this->partida_actual->setDisparos1(this->disparos1);
         this->partida_actual->setDisparos2(this->disparos2);
         this->partida_actual->setNivel(3);
-            }
+     }else{
+        if(jugador1->getPuntaje()>jugador2->getPuntaje()){
+            msg.setText("Jugador 1 ha ganado");
+        }else if(jugador1->getPuntaje()<jugador2->getPuntaje()){
+            msg.setText("Jugador 2 ha ganado");
+        }else{
+            msg.setText("El juego ha sido un empate");
+        }
+
+        msg.exec();
+    }
 }
 
-void MainWindow::Actualizacion()
+void MainWindow::Actualizacion()//funcion para actualizar el recorrido de la bala , posicionandola cerca a los barcos (recorrido y choque)
 {
-//    balacirc1->getBala()->movimiento(dt_);
+    //balacirc1->getBala()->movimiento(dt_);
 
 //    float x=balacirc1->getBala()->getX();
 //    float y=balacirc1->getBala()->getY();
-//    //cout <<"X "<<x<<endl;
-//    //cout <<"Y "<<y<<endl;
-//    balacirc1->actualizar(x+barc1->getBarco()->getX(),-y+barc1->getBarco()->getY());
+//    cout <<"X "<<x*0.05<<endl;
+//    cout <<"Y "<<y*0.05<<endl;
+//    balacirc1->actualizar(x*0.05,y*0.05);
 
     if(turno==true){
 
@@ -349,7 +400,9 @@ void MainWindow::Actualizacion_circ()
 
 void MainWindow::on_comboBox_currentIndexChanged(int index)
 {
+    cout <<jugador1->getBarcos().size()<<endl;
    if(index>0){
+
    barc1=jugador1->getBarcos()[index-1];
    }
 
@@ -419,7 +472,7 @@ void MainWindow::on_comboBox_2_currentIndexChanged(int index)
     }
 }
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_pushButton_clicked()//activacion de los botones para posiconar los barcos
 {
     if(iniciar==false){
         iniciar=true;
@@ -450,9 +503,9 @@ void MainWindow::on_pushButton_clicked()
     }
 }
 
-void MainWindow::on_tipo1_currentIndexChanged(int index)
+void MainWindow::on_tipo1_currentIndexChanged(int index)//tipo de disparo
 {
-    if(index==0){
+    if(index==0){//el valor cambia en comboBox_2
         Parabolic1=true;
     }else{
         Parabolic1=false;
@@ -473,24 +526,24 @@ void MainWindow::on_tipo2_currentIndexChanged(int index)
 void MainWindow::on_Disparar1_clicked()
 {
    timer->start(dt_);
-   float angulo1=ui->angulo1->value();
+   float angulo1=ui->angulo1->value();//se ingresa el valor del angulo en la pestaña
    turno=true;
-   if(jugador1->getDisparos()>0){
+   if(jugador1->getDisparos()>0 and barc1!=NULL){//contador de disparos
        if(Parabolic1==true){
-        bala1=barc1->getBarco()->dispara(400,1.5,-1.2,angulo1,1);
+        bala1=barc1->getBarco()->dispara(400,1.5,-1.2,angulo1,1);//dispara es tipo balagraf dispara la bala con los parametros dados
        }else{
-           bala1=barc1->getBarco()->dispara(400,1.5,-1.2,angulo1,3);
+           bala1=barc1->getBarco()->dispara(400,1.5,-1.2,angulo1,3);//el ultimo parametro, es tpo 1 parabolico, tipo 2 mrua
        }
 
-       jugador1->Quitar_disparo();
+       jugador1->Quitar_disparo();//quita el disparo
 
-       scene1->removeItem(disparos1[jugador1->getDisparos()]);
+       scene1->removeItem(disparos1[jugador1->getDisparos()]);// elimina el disparo de la escena
        //cout<<"cantidad de disparos: "<<jugador1->getDisparos()<<endl;
-       bala1->setEscala(0.2);
-       scene->addItem(bala1);
+       bala1->setEscala(0.2);//pone la imagen de la bala a escala
+       scene->addItem(bala1);//añade la bala a la escena
        }
-   //balacirc1= jugador1->getBarcos()[3]->getBarco()->dispara(400,1.6,-1.2,800000,2);
-   //scene->addItem(balacirc1);
+//   balacirc1= jugador1->getBarcos()[3]->getBarco()->dispara(400,-1.6,1.2,70000,2);
+//   scene->addItem(balacirc1);
 
 
 }
@@ -498,16 +551,17 @@ void MainWindow::on_Disparar1_clicked()
 void MainWindow::on_Disparar2_clicked()
 {
     timer->start(dt_);
-    float angulo2=ui->angulo2->value();
+    float angulo2=ui->angulo2->value();//ingresa el angulo en el boton de la interfaz
     turno=false;
-    if(jugador2->getDisparos()>0){
+    if(jugador2->getDisparos()>0 and barc1!=NULL){//contador de disparos
         if(Parabolic2==true){
-         bala2=barc2->getBarco()->dispara(400,1.5,-1.2,angulo2,1);
+         bala2=barc2->getBarco()->dispara(400,1.5,-1.2,angulo2,1);//dispara es tipo balagraf dispara la bala con los parametros dados
+
         }else{
-            bala2=barc2->getBarco()->dispara(400,1.5,-1.2,angulo2,3);
+            bala2=barc2->getBarco()->dispara(400,1.5,-1.2,angulo2,3);//el ultimo parametro, es tpo 1 parabolico, tipo 2 mrua
         }
 
-        jugador2->Quitar_disparo();
+        jugador2->Quitar_disparo();//quita disparo
 
         scene2->removeItem(disparos2[jugador2->getDisparos()]);
         //cout<<"cantidad de disparos: "<<jugador1->getDisparos()<<endl;
@@ -516,36 +570,36 @@ void MainWindow::on_Disparar2_clicked()
         }
 }
 
-void MainWindow::on_reiniciarP_clicked()
+void MainWindow::on_reiniciarP_clicked()//para reiniciar partida, se apunta a las variables jugador 1 y 2 y se crean dos objetos con los barcos
 {
     this->jugador1=new Jugador("Jugador 1",5,5,1);
     this->jugador2=new Jugador("Jugador 2",5,5,2);
 
-    partida_actual=new Partida("default", this->jugador1,this->jugador2,nivel);
+    partida_actual=new Partida("default", this->jugador1,this->jugador2,nivel);//crea una nueva partida
 
     setNivel(nivel,partida_actual);
 }
 
-void MainWindow::on_guardarP_clicked()
+void MainWindow::on_guardarP_clicked()//se agrega el nombre de la partida en el espacio de texto y lo agrega con la funcion set nombre
 {
     QString nombre=ui->nombrepartida->text();
     partida_actual->setNombre(nombre);
-    ui->cargar->addItem(partida_actual->getNombre());
-    ui->eliminar->addItem(partida_actual->getNombre());
-    partidas.append(partida_actual);
+    ui->cargar->addItem(partida_actual->getNombre());//(guarda) carga la partida
+    ui->eliminar->addItem(partida_actual->getNombre());//elimina la partida actual
+    partidas.append(partida_actual);//agrega la partida al vector
 }
 
 void MainWindow::on_eliminarP_clicked()
 {
-   partidas.removeAt(this->elim);
-   ui->eliminar->clear();
+   partidas.removeAt(this->elim);//remueve la partida del vector
+   ui->eliminar->clear();//"destruye" el objeto del vector partidas
    for (int i=0; i<partidas.size();i++ ) {
-    ui->eliminar->addItem(partidas[i]->getNombre());
+    ui->eliminar->addItem(partidas[i]->getNombre());//con el for busca la partida y  la elimina
    }
 
 }
 
-void MainWindow::on_cargarP_clicked()
+void MainWindow::on_cargarP_clicked()//carga la partida que ya esta previamente guardada. agrega a la escena las diferentes variables con los obbjetos
 {
     scene=new QGraphicsScene;
     scene1=new QGraphicsScene;
@@ -565,17 +619,17 @@ void MainWindow::on_cargarP_clicked()
     ui->comboBox_2->addItem("Seleccione Barco");
     ui->Disparar1->setEnabled(false);
     ui->Disparar2->setEnabled(false);
-    partida_actual=partidas[this->carg];
-    this->jugador1=partida_actual->getJugador1();
+    partida_actual=partidas[this->carg];//carga la partida
+    this->jugador1=partida_actual->getJugador1();//añade los jugadores a la partida
     this->jugador2=partida_actual->getJugador2();
     setjugador1(this->jugador1);
     setjugador2(this->jugador2);
-    ui->puntaje1->setText(QString::number(jugador1->getPuntaje()));
+    ui->puntaje1->setText(QString::number(jugador1->getPuntaje()));//añade los puntajes guardados a la partida
     ui->puntaje2->setText(QString::number(jugador2->getPuntaje()));
 
 }
 
-void MainWindow::on_nuevaP_clicked()
+void MainWindow::on_nuevaP_clicked()//crea una nueva partida
 {
     this->jugador1=new Jugador("Jugador 1",5,5,1);
     this->jugador2=new Jugador("Jugador 2",5,5,2);
@@ -584,7 +638,7 @@ void MainWindow::on_nuevaP_clicked()
     setNivel(1,partida_actual);
 }
 
-void MainWindow::on_pushButton_2_clicked()
+void MainWindow::on_pushButton_2_clicked()//botones del jugador2
 {
     if(menu==false){
         ui->nuevaP->setEnabled(false);
